@@ -1,0 +1,13 @@
+ds = xr.open_dataset('/mnt/c/INPE/Semana 30102023-01112023/Atividade3.2.MalhaComTodasUFsDoBrasil/precip.Global.1891-2023.nc')
+
+# Defina o intervalo de datas desejado
+start_date = '1991-01-01'
+end_date = '2022-12-01'
+
+# Selecione a variável e o intervalo de datas
+varm = ds['precip'].sel(time=slice(start_date, end_date))
+print(varm)
+# Agora, varm contém os dados da variável dentro do intervalo de datas especificado
+print(ds.variables)
+
+## varm = var.sel(time=slice('1983-01-01', '2022-12-01'))
